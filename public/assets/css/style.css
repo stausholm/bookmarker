@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #fafafa;
+  font-size: 16px;
+  color: #555;
+  /* padding: 30px; */
+  font-family: 'Source Sans Pro', sans-serif;
+  overflow: hidden;
+}
+ul {
+  list-style-type: none;
+}
+
+
+button img, button svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+#no-bookmarks-initial {
+  display: block;
+  text-align: center;
+}
+#no-bookmarks {
+  display: none;
+  text-align: center;
+}
+#no-bookmarks.display-block {
+  display: block;
+}
+#no-bookmarks img, #no-bookmarks-initial img {
+  opacity: .2;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+
+
+/*Container styling*/
+/*###############################################################################################*/
+.container {
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 200px;
+  right: 0;
+  margin-top: 64px; /*Height of nav*/
+  padding: 24px 48px 24px 62px; /* 62 = nav padding + search input padding-left*/
+  /* margin-left: 200px; */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e4e5ea;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 4px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bbbbbb;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.container-header button {
+  border: none;
+  background: none;
+  margin-left: 26px;
+}
+.container-header p:first-of-type {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.container-change button {
+  outline: none;
+  cursor: pointer;
+}
+.container-change button .tooltip-text {
+  background-color: #888 !important;
+}
+.container-change button .tooltip-text::after {
+  border-color: transparent transparent #888 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*modal styling*/
+/*###############################################################################################*/
+/* the modal background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  animation: fadeIn .4s ease;
+}
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 600px; /* Could be more or less, depending on screen size */
+  box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
+}
+
+/* The Close Button */
+.modal .modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 16px;
+}
+
+.modal .modal-close:hover,
+.modal .modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.modal .group {
+  margin-top: 40px;
+}
+.edit-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Add Zoom Animation */
+.animate {
+  animation: animatezoom 0.2s;
+}
+
+@keyframes animatezoom {
+  0% {transform: scale(0); opacity: 0}
+  80% {transform: scale(1.02);}
+  100% {transform: scale(1); opacity: 1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Tooltip styling*/
+/*###############################################################################################*/
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  max-width: 120px;
+  background-color: #6099f6;;
+  color: #fff;
+  text-align: center;
+  /* border-radius: 6px; */
+  /* padding: 29px 4px; */
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  /* margin-left: -60px; */
+  opacity: 0;
+  transition: opacity .3s ease, transform .3s ease;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 6px;
+  transform: translateY(-5px) translateX(-50%);
+  white-space: pre;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #6099f6; transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0) translateX(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Overlay styling*/
+/*###############################################################################################*/
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.75);
+  cursor: pointer;
+  z-index: 999;
+}
+
+#overlay div {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 16px;
+  opacity: .9;
+  text-shadow: 0px 0px 2px rgba(250, 255, 255, .5);
+  text-align: center;
+  width: 80%;
+}
+#overlay div img {
+  margin: 50px auto;
+  display: block;
+  max-width: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  padding: 16px;
+  text-align: center;
+  background: #555;
+  color: #fff;
+  transform: translateX(-50%);
+  border-left: 10px solid #444;
+  z-index: 999;
+}
+#toast.error {
+  background: #F44336;
+  border-left: 10px solid #ce3a2f;
+}
+#toast.warning {
+  background: #FF9800;
+  border-left: 10px solid #dc8300;
+}
+#toast.success {
+  background: #4CAF50;
+  border-left: 10px solid #409243;
+}
+#toast.show-toast {
+  visibility: visible;
+  animation: toastIn 0.3s, toastOut 0.3s 1.3s;
+}
+#toast.show-toast-long {
+  cursor: pointer;
+  visibility: visible;
+  animation: toastIn 0.3s, toastOut 0.3s 4.7s;
+}
+#toast.show-toast-long:hover {
+  opacity: .8;
+}
+@keyframes toastIn {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+@keyframes toastOut {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 765px) {
+  body {
+    overflow: initial;
+  }
+
+  .modal {
+    z-index: 3;
+  }
+  .container {
+    position: initial;
+    margin-left: 0;
+    margin-top: 153px;
+    overflow-y: initial;
+    padding: 24px 14px;
+  }
+  .container-header p:last-of-type {
+    display: none;
+  }
+  .tooltip-text {
+    display: none;
+  }
+  .link-text {
+    max-width: 185px;
+  }
+}

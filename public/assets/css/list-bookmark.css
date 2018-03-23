@@ -1,0 +1,303 @@
+.search-hide { /*hide all bookmarks that don't match the searchbox value*/
+  display: none !important;
+}
+.tag-hide { /*hide all bookmarks that don't have the clicked tag*/
+  display: none !important;
+}
+.no-tags, .tag-favorite {
+  display: none !important;
+}
+
+/*Link styling*/
+/*###############################################################################################*/
+.list-li {
+  border-bottom: 1px solid #dadada;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-li > div:first-child {
+  flex-basis: 100%;
+}
+.list-li .current-tag {
+  display: inline-block;
+  cursor: default;
+  font-size: 12px;
+  padding: 2px 6px;
+  background: #dadada;
+  margin-right: 6px;
+  margin-top: 8px;
+  margin-left: 0;
+  opacity: .6;
+}
+
+ul .list-li a {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 -10px 10px -10px;
+  color: #555555;
+  animation: animatezoom 0.2s;
+}
+
+ul .list-li a:hover {
+  background: #fefefe;
+}
+
+.link-wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  object-fit: cover;
+  background-color: #6099f669;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-position: center center;
+}
+
+.link-text {
+  width: 100%;
+}
+
+.link-text p:last-of-type {
+  font-size: 12px;
+  opacity: .3;
+}
+
+
+.actions {
+  display: flex;
+  opacity: .7;
+}
+
+.actions button, .actions .btn-fav {
+  border: none;
+  outline: none;
+  background: none;
+  /* opacity: .4; */
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+}
+.actions button:hover, .actions .btn-fav:hover {
+  opacity: .4;
+  background: #d2d2d2;
+}
+
+
+.heart-full{opacity:0;}.heart-box{fill:none;}.heart-border{opacity:0.3;}
+
+.btn-fav input:checked + svg .heart-full {
+  opacity: 1;
+  fill: #bbd2f8;
+}
+/* .btn-fav input:checked + svg .heart-border {
+  opacity: 0;
+} */
+
+
+.btn-fav input {
+  opacity: 0;
+}
+.btn-fav img, .btn-fav svg {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Link styling grid*/
+/*###############################################################################################*/
+.container-content ul.display-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container-content ul.display-grid li {
+  border-bottom: none;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  width: calc(33% - 10px);
+  background: #fff;
+  /* padding: 20px; */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  display:flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.container-content ul.display-grid li:hover {
+  /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.container-content ul.display-grid li a {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0;
+  margin: 0 ;
+  color: #555555;
+  animation: animatezoom 0.2s;
+  position: relative;
+}
+
+ul.display-grid .thumbnail {
+  min-width: 50px;
+  min-height: 50px;
+  object-fit: cover;
+  background-color: #6099f669;
+  /* background-repeat: repeat; */
+  background-position: 20px;
+  margin-right: 10px;
+  width: 100%;
+}
+.container-content ul.display-grid .search-hide {
+  display: none;
+}
+ul.display-grid .list-li > div {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+}
+ul.display-grid .list-li > div:first-child {
+  flex-basis: auto;
+}
+ul.display-grid .list-li .current-tag {
+  display: inline-block;
+  cursor: default;
+  font-size: 12px;
+  padding: 2px 6px;
+  /* padding-right: 28px; */
+  background: #dadada;
+  margin-right: 6px;
+  margin-top: 8px;
+  margin-left: 0;
+  opacity: .6;
+}
+ul.display-grid .actions {
+  position: absolute;
+  top: 9px;
+  right: 0;
+}
+ul.display-grid .link-wrapper {
+  display: block;
+}
+ul.display-grid .link-text {
+  padding: 10px 20px 0 20px;
+}
+ul.display-grid .btn-fav input:checked + svg .heart-full {
+  opacity: .3 !important;
+  fill: #000 !important;
+}
+ul.display-grid .btn-fav input:checked + svg .heart-border {
+  opacity: 0 !important;
+}
+
+/*Link styling condensed*/
+/*###############################################################################################*/
+.container-content ul.display-condensed li {
+  border-bottom: none;
+  /* margin: 0; */
+  margin-bottom: 6px;
+  /* padding: 20px; */
+}
+.container-content ul.display-condensed li:hover {
+
+}
+.container-content ul.display-condensed li a {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0;
+  margin: 0 ;
+  color: #555555;
+  animation: animatezoom 0.2s;
+}
+
+ul.display-condensed .thumbnail {
+  min-width: 16px;
+  min-height: 16px;
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  background-color: rgba(0,0,0,0);
+  margin-right: 10px;
+  border: none;
+  margin-top: 4px;
+}
+.container-content ul.display-condensed .search-hide {
+  display: none;
+}
+ul.display-condensed .list-li > div {
+  display: none;
+}
+.container-content ul.display-condensed li a p:last-child {
+  opacity: 0;
+}
+.container-content ul.display-condensed li:hover a p:last-child {
+  opacity: .3;
+}
+
+
+
+
+
+@media screen and (max-width: 965px) {
+  .container-content ul.display-grid li {
+    width: calc(50% - 10px);
+  }
+}
+
+
+@media screen and (max-width: 765px) {
+  .list-li > div {
+    display: none;
+  }
+  .thumbnail {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+  }
+  .container-content ul.display-grid li {
+    width: 100%;
+  }
+  ul.display-grid .list-li > div {
+    display: initial;
+  }
+}

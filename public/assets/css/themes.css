@@ -1,0 +1,81 @@
+/*BLUE THEME*/
+body.theme-blue nav {
+  background: #4285f4;
+}
+body.theme-blue .tooltip .tooltip-text {
+  background-color: #6099f6;
+}
+body.theme-blue .tooltip .tooltip-text::after {
+  border-color: transparent transparent #6099f6 transparent;
+}
+body.theme-blue .tags-container .tag-active {
+  background: #6099f6;
+}
+body.theme-blue .tags-container > .tag-btn.tag-active::after {
+  background: linear-gradient(to right, rgba(96, 153, 246,0) 0%,rgba(96, 153, 246,1) 100%);
+}
+body.theme-blue .tags-container .tag-active:hover {
+  background: #5a90e6;
+}
+body.theme-blue .tag-highlighted, body.theme-blue .thumbnail {
+  background-color: #6099f669 !important;
+}
+body.theme-blue .btn-fav input:checked + svg .heart-full {
+  opacity: 1;
+  fill: #bbd2f8;
+}
+
+/*GREEN THEME*/
+body.theme-green nav {
+  background: #0f9d58;
+}
+body.theme-green .tooltip .tooltip-text {
+  background-color: #36ad73;
+}
+body.theme-green .tooltip .tooltip-text::after {
+  border-color: transparent transparent #36ad73 transparent;
+}
+body.theme-green .tags-container .tag-active {
+  background: #36ad73;
+}
+body.theme-green .tags-container > .tag-btn.tag-active::after {
+  background: linear-gradient(to right, rgba(54,173,115,0) 0%,rgba(54,173,115,1) 100%);
+}
+body.theme-green .tags-container .tag-active:hover {
+  background: #329866;
+}
+body.theme-green .tag-highlighted, body.theme-green .thumbnail {
+  background-color: #36ad7369 !important;
+}
+body.theme-green .btn-fav input:checked + svg .heart-full {
+  opacity: 1;
+  fill: #a9dac2;
+}
+
+
+/*YELLOW THEME*/
+body.theme-yellow nav {
+  background: #f4b400;
+}
+body.theme-yellow .tooltip .tooltip-text {
+  background-color: #f6c029;
+}
+body.theme-yellow .tooltip .tooltip-text::after {
+  border-color: transparent transparent #f6c029 transparent;
+}
+body.theme-yellow .tags-container .tag-active {
+  background: #f6c029;
+}
+body.theme-yellow .tags-container > .tag-btn.tag-active::after {
+  background: linear-gradient(to right, rgba(246, 192, 41,0) 0%,rgba(246, 192, 41,1) 100%);
+}
+body.theme-yellow .tags-container .tag-active:hover {
+  background: #e8b628;
+}
+body.theme-yellow .tag-highlighted, body.theme-yellow .thumbnail {
+  background-color: #f6c02969 !important;
+}
+body.theme-yellow .btn-fav input:checked + svg .heart-full {
+  opacity: 1;
+  fill: #f8e2a4;
+}

@@ -1,0 +1,16 @@
+tags i tagsContainer opdateres kun ved refresh
+tagtyper skal have komplet overhaul
+sortering alfabetisk
+export bookmarks to netscape HTML
+import bookmarks from netscape html
+
+
+
+
+lav ordentlig toast til delete
+antal links opdateres først ved refresh eller søgning i søgefelt
+edit knap virker kun ved refresh
+rework filter by notags
+filter favorites virker ikke. i ejs, hvis favorites=true så indsæt favorite class på tags. tilføj/fjern denne class ved klik på hjerte
+localStorage til at gemme list layout
+update bookmark requires refresh to see changes

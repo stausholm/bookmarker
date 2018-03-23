@@ -1,0 +1,131 @@
+
+.tags-container {
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 214px;
+  margin-top: 64px; /*Height of nav*/
+  background: #ececec;
+  padding: 26px;
+}
+
+.tags-container > div {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+.tags-container button {
+  border: none;
+  background: none;
+  padding: 15px;
+  width: 100%;
+  margin: 10px 0;
+  outline: none;
+  text-align: left;
+  transition: background-color .1s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  color: #555;
+  font-family: 'Source Sans Pro', sans-serif;
+  white-space: nowrap;
+}
+.tags-container button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.tags-container .tag-active {
+  background: #6099f6;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+.tags-container > .tag-btn.tag-active::after {
+  background: linear-gradient(to right, rgba(96,153,246,0) 0%,rgba(96,153,246,1) 100%);
+}
+.tags-container .tag-active:hover {
+  background: #5a90e6;
+}
+.tags-container > .tag-btn::before {
+  content: "#";
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  font-size: 22px;
+  font-weight: bold;
+  transform: translateY(-3px);
+  float: left;
+}
+.tags-container > .tag-btn::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(236,236,236,0) 0%,rgba(236,236,236,1) 100%);
+  top: 0;
+  right: 0;
+}
+
+.tag-highlighted {
+  background-color: #6099f669 !important;
+}
+
+.tags-container button svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  line-height: 16px;
+  transform: translateY(3px);
+}
+
+.tags-container button.tag-active svg .tag-cls-2{
+  fill: #fff !important;
+}
+
+
+
+
+
+@media screen and (max-width: 765px) {
+
+  .tags-container {
+    overflow-x: scroll;
+    position: fixed;
+    top: 0;
+    bottom: initial;
+    left: 0;
+    right: 0;
+    width: initial;
+    margin-top: 64px;
+    background: #ececec;
+    padding: 0;
+    display: flex;
+    overflow-y: hidden;
+    height: initial;
+    z-index: 1;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  .tags-container > div {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    display: flex;
+  }
+  .tags-container button {
+    overflow: initial;
+    margin-right: 14px;
+    padding: 10px;
+  }
+  .tags-container button::after {
+    background:none !important;
+  }
+  .tags-container > .tag-btn::before {
+    margin-right: 0;
+  }
+  .tags-container > .tag-btn {
+    padding-right: 33px;
+  }
+}

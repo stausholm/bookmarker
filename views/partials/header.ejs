@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#4285f4">
+  <title><%= title %></title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/list-bookmark.css">
+  <link rel="stylesheet" href="/assets/css/list-tags.css">
+  <link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" href="/assets/css/themes.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <div class=" logo">
+          <img src="/images/logo.svg" alt="logo">
+        </div>
+        <div class="search">
+          <div class="form">
+            <input type="text" id="search-input" onkeyup="searchFunction()" name="" value="" placeholder="Search" autocomplete="off">
+            <button type="button" name="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.cls-1-search{fill:#fff;}.cls-2{fill:none;}</style></defs><title>Asset 2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3_copy" data-name="Layer 3 copy"><path class="cls-1-search" d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,5L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"/><path class="cls-2" d="M0,0H24V24H0Z"/></g></g></svg>
+
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button type="button" name="button" onclick="toggleBookmarkMaker()">
+          <img src="/images/addNew.svg" alt="new bookmark">
+        </button>
+        <button type="button" name="button" class="tooltip" id="avatar-btn" onclick="showToast('No authentication No avatar','warning')">
+          <img src="/images/avatar.svg" alt="avatar">
+          <span class="tooltip-text">Avatar</span>
+        </button>
+        <button type="button" name="button" class="tooltip" onclick="helpOn()">
+          <img src="/images/question.svg" alt="help">
+          <span class="tooltip-text">Help?</span>
+        </button>
+        <button type="button" name="button" onclick="toggleSettings()" class="drop">
+          <img src="/images/dotsVert.svg" alt="settings" class="drop">
+        </button>
+        <div class="dropdown drop" id="dropdown">
+          <ul>
+            <li>
+              <button type="button" name="button" class="btn">Import Data</button>
+              <button type="button" name="button" class="btn-stripped">Export Data</button>
+            </li>
+
+            <li class="colorpicker drop">
+              <input type="radio" name="color" value="4285f4" id="r1" class="drop" onclick="changeTheme('blue')">
+              <label for="r1" class="drop"></label>
+              <input type="radio" name="color" value="0f9d58" id="r2" class="drop" onclick="changeTheme('green')">
+              <label for="r2" class="drop"></label>
+              <input type="radio" name="color" value="f4b400" id="r3" class="drop" onclick="changeTheme('yellow')">
+              <label for="r3" class="drop"></label>
+            </li>
+            <li>
+              <p>This is a very short text <a href="#">very cool</a> indeed</p>
+            </li>
+            <li>
+              <span>&copy; 2017</span>
+              <span>
+                <a href="#">V 0.0.1</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="bookmark-createOrUpdate" id="bookmark-createOrUpdate">
+      <div id="errors-container" style="font-weight:700;color:red;">
+
+      </div>
+      <form id="post-new-bm">
+        <div class="row">
+          <div class="group input-first">
+            <input type="text" name="title" id="title" value="" required="required" autocomplete="off">
+            <label for="title">Title</label>
+            <div class="bar"></div>
+          </div>
+          <div class="group">
+            <input type="text" name="link" id="link" value="" required="required" autocomplete="off">
+            <label for="link">Link</label>
+            <div class="bar"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="group">
+            <div class="tags">
+              <div id="tag-typer-container">
+
+              </div>
+              <input type="text" name="tag-typer" id="tag-typer" value="" placeholder="Add tags (optional). Press comma to add more" autocomplete="off">
+              <label for="tag-typer">Tags</label>
+              <div class="bar"></div>
+            </div>
+            <ul id="suggested-tags">
+
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <button type="reset" name="button" class="btn-stripped" onclick="toggleBookmarkMaker()">Cancel</button>
+          <button type="submit" class="btn">Add Bookmark</button>
+        </div>
+      </form>
+
+    </div>
+  </header>
