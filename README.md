@@ -1,19 +1,20 @@
 # Node.js Bookmarker
 Express application used for storing bookmarks with tags.  
-  
+
 :information_source: I started learning Js December 2017. This was created January 2018. Be warned.
-  
+
 The app uses ajax requests for all CRUD functions. Bookmarks are stored in a mongodb bookmarks collection.  
+Whenever the free Heroku dyno (https://serene-hamlet-74990.herokuapp.com/) wakes up from sleep, the database is recreated with testdata.  
 ```
 {
     "_id" : ObjectId("5a86ed87689ee02c4ca5b416"),
     "title" : "Delaunay triangle pattern maker",
     "link" : "http://msurguy.github.io/triangles/",
-    "tags" : [ 
-        "tag2", 
-        "tagalicious", 
-        "howTo", 
-        "triangle", 
+    "tags" : [
+        "tag2",
+        "tagalicious",
+        "howTo",
+        "triangle",
         "ascii"
     ],
     "created" : ISODate("2018-02-16T14:41:11.842Z"),
@@ -28,7 +29,7 @@ Install dependencies
 npm install
 ```
 
-Run app 
+Run app
 ```
 mongod
 node app
