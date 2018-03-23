@@ -34,6 +34,6 @@ app.use(function(err, req, res, next) {
 
 
 //if there's a port specified by the environment (fx. heroku), use that. Else use port 3000
-app.listen(process.env.port || 3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log('now listening for requests');
 });
