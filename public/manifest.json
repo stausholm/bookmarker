@@ -1,0 +1,25 @@
+{
+  "short_name": "Bookmarker",
+  "name": "Save bookmarks with tags - not folders",
+  "icons": [
+    {
+      "src": "launcher-icon-x1.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "launcher-icon-x2.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "launcher-icon-x4.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#4285f4",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url":"/"
+}

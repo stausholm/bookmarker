@@ -1,9 +1,13 @@
 {
   "name": "bookmark-new",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "bookmarker but simpler this time",
   "main": "app.js",
   "scripts": {
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

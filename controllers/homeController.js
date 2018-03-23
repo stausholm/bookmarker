@@ -6,7 +6,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false});
 var jsonParser = bodyParser.json();
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost/bookmarksNew');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bookmarksNew');
 //mongoose promises is depricated, so set it to ES6 promises
 mongoose.Promise = global.Promise;
 

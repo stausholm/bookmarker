@@ -145,15 +145,24 @@ var bookmarksToAdd = [
 ];
 
 module.exports = function() {
-  Bookmark.find({}).then((data)=> {
-    if (data.length == 0) {
-      console.log('no bookmarks found. populating DB with test bookmarks');
-      for (var i = 0; i < bookmarksToAdd.length; i++) {
-        let bm = new Bookmark(bookmarksToAdd[i]);
-        bm.save().then((x)=> {
-          console.log('bookmark created: ' + x.title);
-        });
-      }
+  Bookmark.remove({}, function(err) {
+    console.log('collection emptied');
+    for (var i = 0; i < bookmarksToAdd.length; i++) {
+      let bm = new Bookmark(bookmarksToAdd[i]);
+      bm.save().then((x)=> {
+        console.log('bookmark created: ' + x.title);
+      });
     }
   })
+  // Bookmark.find({}).then((data)=> {
+  //   if (data.length == 0) {
+  //     console.log('no bookmarks found. populating DB with test bookmarks');
+  //     for (var i = 0; i < bookmarksToAdd.length; i++) {
+  //       let bm = new Bookmark(bookmarksToAdd[i]);
+  //       bm.save().then((x)=> {
+  //         console.log('bookmark created: ' + x.title);
+  //       });
+  //     }
+  //   }
+  // })
 }
