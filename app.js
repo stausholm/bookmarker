@@ -1,6 +1,6 @@
 const express = require('express');
 const homeController = require('./controllers/homeController');
-
+const populateDb = require('./populateDb');
 
 
 //set up express app
@@ -19,6 +19,9 @@ app.use(express.static('./public'));
 // fire controllers
 homeController(app);
 
+
+// if db is empty, populate it with test data
+populateDb();
 
 //error handling middleware
 app.use(function(err, req, res, next) {

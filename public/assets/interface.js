@@ -195,6 +195,11 @@ function changeTheme(e) {
 }
 // check the value of localStorage item 'desiredTheme', and add css class to body depending on desiredTheme value
 var currentTheme = localStorage.getItem('desiredTheme');
+if (currentTheme == null) {
+  document.body.classList.add('theme-blue');
+  document.getElementById('r1').checked = true;
+  localStorage.setItem('desiredTheme','blue');
+}
 if (currentTheme == 'blue') {
   document.body.classList.add('theme-blue');
   document.getElementById('r1').checked = true;
